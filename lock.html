@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anniversary Lock</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffe6f2;
+        font-family: Arial, sans-serif;
+      }
+      .lock-container {
+        text-align: center;
+        background: #ff99cc;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      h2 {
+        color: #fff;
+      }
+      input {
+        width: 100px;
+        padding: 10px;
+        font-size: 18px;
+        text-align: center;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        outline: none;
+      }
+      button {
+        display: block;
+        width: 100px;
+        margin: 10px auto;
+        padding: 10px;
+        background: #ff4da6;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background: #ff1a8c;
+      }
+      .error {
+        color: red;
+        margin-top: 10px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="lock-container">
+      <h2>Enter Anniversary Date</h2>
+      <input type="text" id="anniversaryInput" placeholder="MM DD YY" />
+      <button onclick="checkDate()">Unlock</button>
+      <p class="error" id="errorMessage">Incorrect date. Try again.</p>
+    </div>
+    <script>
+      function checkDate() {
+        const correctDate = "052224";
+        const userInput = document
+          .getElementById("anniversaryInput")
+          .value.trim();
+        const errorMessage = document.getElementById("errorMessage");
+
+        if (userInput === correctDate) {
+          window.location.href = "/message/index.html"; // Change to your target page
+        } else {
+          errorMessage.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
