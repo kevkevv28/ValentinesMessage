@@ -1,32 +1,37 @@
-/* General Styling */
 body {
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
   background-color: #000;
-  overflow: scroll;
+  overflow: hidden; /* Prevent scroll issues */
+  touch-action: none; /* Prevent mobile touch scrolling interference */
 }
 
 h2 {
   font-size: 2.5em;
   text-align: center;
+  color: white;
 }
 
 p {
   font-size: 1.2em;
   text-align: justify;
   padding: 30px;
+  color: black; /* Keep text hidden */
 }
 
-/* Cursor Effect */
+/* Circle Effect */
 .cursor {
   height: 200px;
   width: 200px;
-  background-color: #fff;
+  background-color: white;
   border-radius: 50%;
   position: absolute;
-  z-index: -1;
+  z-index: 10;
+  mix-blend-mode: difference; /* Reveals text */
+  pointer-events: none;
+  display: none; /* Hidden initially */
 }
 
 /* Button Initially Hidden */
@@ -68,7 +73,7 @@ p {
   bottom: 20%;
   left: 50%;
   transform: translateX(-50%);
-  width: 250px;
-  height: 90px;
+  width: 150px;
+  height: 50px;
   cursor: pointer;
 }
